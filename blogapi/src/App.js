@@ -1,15 +1,16 @@
+import React from 'react';
 
-import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-
-function App() {
-  return (
-    <div className="App">
-      <Header/>
-      <Footer/>
-    </div>
-  );
+class app extends React.Component {
+  componentDidMount() {
+    const apiUrl = "https://8000-arthurvguide-drfblogapp-5sb5ujnucks.ws-eu72.gitpod.io/api"
+    fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+      
+  }
+  render() {
+    return <div>Example Connection</div>
+  }
 }
 
-export default App;
+export default app
